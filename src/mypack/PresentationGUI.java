@@ -55,7 +55,6 @@ public class PresentationGUI extends JFrame implements ActionListener
     private JPanel buttonPanel;
     private JButton submitButton;
     private JButton clearButton;
-    private int teamNumber;
    
    //these are fields that will be used to hold the values pulled from the interface
     int q1;
@@ -298,9 +297,9 @@ public class PresentationGUI extends JFrame implements ActionListener
                 con.configure("hibernate.cfg.xml");
                 SessionFactory SF = con.buildSessionFactory();
                 Session session = SF.openSession();
-                teamNumber++;
+                
                 team t = new team();
-                t.setTeamName("Team " + teamNumber);
+                t.setTeamName("Team " + teamComboBox.getSelectedIndex());
                 t.setQ1(q1);
                 t.setQ2(q2);
                 t.setQ3(q3);
